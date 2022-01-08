@@ -43,10 +43,10 @@
     dropbox.addEventListener("dragover", (e) => {
       e.preventDefault();
     });
-    dropbox.addEventListener("mouseenter", () => {
+    dropbox.addEventListener("dragenter", () => {
       dropbox.style.background = "PaleGreen";
     });
-    dropbox.addEventListener("mouseleave", () => {
+    dropbox.addEventListener("dragleave", () => {
       dropbox.style.background = "transparent";
     });
     dropbox.addEventListener("drop", (e) => {
