@@ -8,13 +8,13 @@
         font-family: sans-serif;
       }
       iframe {
-        width: 800px;
+        width: 500px;
         height: 140px;
       }
       #dropbox {
         position: fixed;
         top: 100px;
-        left: 100px;
+        left: 200px;
         height: 100px;
         width: 100px;
         border: 4px dashed grey;
@@ -32,12 +32,12 @@
       <h3>Demo: a drag-and-drop area over an iframe of different origin</h3>
       <p>Try to select some text and drag it into the box.</p>
       <p>Behavior:</p>
-      <p>- Chrome on Windows: box turns green on enter, alerts on drop</p>
+      <p>- Chrome on Windows: 1. box turns green on enter, 2. alerts on drop</p>
       <p>- Firefox on Windows: same</p>
       <p>
-        - Chrome on Mac: doesn't work<strong>
-          on the top half of the box</strong
-        >
+        - Chrome on Mac: 1. box turns green only if you enter from the bottom
+        half of the box, 2. alerts only if you release on the bottom half of the
+        box
       </p>
       <p>- Firefox on Mac: untested</p>
       <p>- Safari on Mac: untested</p>
