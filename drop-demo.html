@@ -28,21 +28,21 @@
       dropbox.style.background = "transparent";
     }
     dropbox.addEventListener("dragenter", (e) => {
-      e.stopPropagation();
-      e.preventDefault();
+      // e.stopPropagation();
+      // e.preventDefault();
       lightOn();
     });
     dropbox.addEventListener("dragleave", (e) => {
-      e.stopPropagation();
-      e.preventDefault();
+      // e.stopPropagation();
+      // e.preventDefault();
       lightOff();
     });
     dropbox.addEventListener("dragover", (e) => {
-      e.stopPropagation();
+      // e.stopPropagation();
       e.preventDefault();
     });
     dropbox.addEventListener("drop", (e) => {
-      e.stopPropagation();
+      // e.stopPropagation();
       e.preventDefault();
       lightOff();
       alert("Drop detected!");
