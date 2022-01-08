@@ -7,6 +7,10 @@
       body {
         font-family: sans-serif;
       }
+      iframe {
+        width: 800px;
+        height: 140px;
+      }
       #dropbox {
         position: fixed;
         top: 100px;
@@ -16,38 +20,38 @@
         border: 4px dashed grey;
         border-radius: 20px;
       }
+      .explanation {
+        margin-top: 100px;
+      }
     </style>
   </head>
   <body>
-    <iframe src="https://myfavett.com"></iframe>
+    <iframe src="https://bing.com"></iframe>
     <div id="dropbox"></div>
+    <div class="explanation">
+      <h3>Demo: a drag-and-drop area over an iframe of different origin</h3>
+      <p>Try to select some text and drag it into the box.</p>
+      <p>
+        - Behavior of Chrome on Windows: box turns green on enter, alert on drop
+      </p>
+      <p>- Firefox on Windows: same</p>
+      <p>- Chrome on Mac: doesn't work on the top half of the box</p>
+    </div>
   </body>
   <script>
     const dropbox = document.getElementById("dropbox");
-    function lightOn() {
-      dropbox.style.background = "PaleGreen	";
-    }
-    function lightOff() {
-      dropbox.style.background = "transparent";
-    }
-    dropbox.addEventListener("dragenter", (e) => {
-      // e.stopPropagation();
-      // e.preventDefault();
-      lightOn();
-    });
-    dropbox.addEventListener("dragleave", (e) => {
-      // e.stopPropagation();
-      // e.preventDefault();
-      lightOff();
-    });
     dropbox.addEventListener("dragover", (e) => {
-      // e.stopPropagation();
       e.preventDefault();
+    });
+    dropbox.addEventListener("mouseenter", () => {
+      dropbox.style.background = "PaleGreen";
+    });
+    dropbox.addEventListener("dragleave", () => {
+      dropbox.style.background = "transparent";
     });
     dropbox.addEventListener("drop", (e) => {
-      // e.stopPropagation();
       e.preventDefault();
-      lightOff();
+      dropbox.style.background = "transparent";
       alert("Drop detected!");
     });
   </script>
