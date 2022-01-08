@@ -2,14 +2,53 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drop demo</title>
+    <title>drop demo</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      #dropbox {
+        position: fixed;
+        top: 100px;
+        left: 100px;
+        height: 100px;
+        width: 100px;
+        border: 4px dashed grey;
+        border-radius: 20px;
+      }
+    </style>
   </head>
   <body>
-    <iframe
-      src="drop-demo.html"
-      frameborder="0"
-      height="500"
-      width="100%"
-    ></iframe>
+    <iframe src="iframe.html"></iframe>
+    <div id="dropbox"></div>
   </body>
+  <script>
+    const dropbox = document.getElementById("dropbox");
+    function lightOn() {
+      dropbox.style.background = "PaleGreen	";
+    }
+    function lightOff() {
+      dropbox.style.background = "transparent";
+    }
+    dropbox.addEventListener("dragenter", (e) => {
+      // e.stopPropagation();
+      // e.preventDefault();
+      lightOn();
+    });
+    dropbox.addEventListener("dragleave", (e) => {
+      // e.stopPropagation();
+      // e.preventDefault();
+      lightOff();
+    });
+    dropbox.addEventListener("dragover", (e) => {
+      // e.stopPropagation();
+      e.preventDefault();
+    });
+    dropbox.addEventListener("drop", (e) => {
+      // e.stopPropagation();
+      e.preventDefault();
+      lightOff();
+      alert("Drop detected!");
+    });
+  </script>
 </html>
